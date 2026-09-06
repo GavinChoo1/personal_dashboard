@@ -1,0 +1,28 @@
+# =============================================================================
+# Google Cloud Terraform Variables Example
+# Copy this file to "terraform.tfvars" and customize your values:
+# cp terraform.tfvars.example terraform.tfvars
+# =============================================================================
+
+# REQUIRED: Your Google Cloud Project ID (e.g. "my-personal-dashboard-12345")
+# Find it with: gcloud config get-value project
+project_id = "YOUR_GCP_PROJECT_ID_HERE"
+
+# Optional: Default region for BigQuery dataset and storage bucket
+region = "us-central1"
+
+# Optional: BigQuery dataset location ("US", "EU", or specific region)
+dataset_location = "US"
+
+# Optional: Custom name for the BigQuery dataset (default is "gmail_analyzer")
+dataset_id = "gmail_analyzer"
+
+# Optional: Environment label
+environment = "dev"
+
+# Optional: Set to false if you prefer to use ADC (Application Default Credentials)
+# instead of downloading a service account key JSON file
+create_service_account_key = true
+
+# Optional: Safety safeguard. If true, deleting terraform deletes all tables and historical data.
+delete_contents_on_destroy = false

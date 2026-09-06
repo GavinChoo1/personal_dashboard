@@ -1,0 +1,36 @@
+# -----------------------------------------------------------------------------
+# BigQuery External Table Configuration for Google Drive / GCS Exports
+# -----------------------------------------------------------------------------
+# This resource configures BigQuery to query the Gmail dataset directly from 
+# external storage without needing to duplicate data into BigQuery native storage.
+#
+# To enable this in your GCP project:
+# 1. Enable BigQuery API: gcloud services enable bigquery.googleapis.com
+# 2. Grant the service account permissions to Google Drive / Cloud Storage.
+# 3. Rename this file to external_table.tf and run 'terraform apply'.
+# -----------------------------------------------------------------------------
+
+resource "google_bigquery_table" "messages_external_drive" {
+  count               = 0  # Set to 1 when BigQuery API is enabled in GCP
+  dataset_id          = var.dataset_id
+  table_id            = "messages_external_drive"
+  description         = "External Table querying emails directly from Google Drive / Cloud Storage"
+  deletion_protection = false
+
+  external_data_configuration {
+    autodetect    = true
+    source_format = "NEWLINE_DELIMITED_JSON"
+
+    # Replace with your Google Drive File/Folder URL or GCS URI:
+    # Example for Google Drive: "https://drive.google.com/open?id=<FILE_ID>"
+    # Example for Cloud Storage: "gs://${var.project_id}-gmail-takeout-staging/emails/*.jsonl"
+    source_uris = [
+      "gs://${var.project_id}-gmail-takeout-staging/emails_past_3d.jsonl"
+    ]
+  }
+
+  labels = {
+    application = "gmail-analyzer"
+    table_type  = "external_drive_table"
+  }
+}

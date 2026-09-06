@@ -1,0 +1,62 @@
+[
+  {
+    "name": "item_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique identifier for this action item"
+  },
+  {
+    "name": "message_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Gmail message ID from which the task was extracted"
+  },
+  {
+    "name": "thread_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Gmail thread ID for direct linking in web interface"
+  },
+  {
+    "name": "task",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Extracted task summary or action required"
+  },
+  {
+    "name": "due_date",
+    "type": "DATE",
+    "mode": "NULLABLE",
+    "description": "Extracted deadline or due date, if identified"
+  },
+  {
+    "name": "priority",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Priority tier (urgent, high, medium, low)"
+  },
+  {
+    "name": "status",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Current status (pending, completed, dismissed)"
+  },
+  {
+    "name": "detected_sender",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Sender who requested the action"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp when the task was identified"
+  },
+  {
+    "name": "completed_at",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "Timestamp when the task was marked completed"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "subscription_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique identifier for this detected recurring service"
+  },
+  {
+    "name": "service_name",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Normalized service name (e.g. Netflix, GitHub, AWS, Spotify)"
+  },
+  {
+    "name": "sender_email",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Sender email domain or address associated with billing"
+  },
+  {
+    "name": "amount",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "Detected recurring payment amount"
+  },
+  {
+    "name": "currency",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Billing currency code (USD, EUR, SGD, GBP, etc.)"
+  },
+  {
+    "name": "frequency",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Billing cadence (monthly, annual, quarterly, weekly, variable)"
+  },
+  {
+    "name": "last_billed_date",
+    "type": "DATE",
+    "mode": "NULLABLE",
+    "description": "Date of the most recent receipt or billing notice"
+  },
+  {
+    "name": "unsubscribe_url",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Direct link or portal to cancel or manage the subscription"
+  },
+  {
+    "name": "is_active",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "Flag indicating if the subscription is actively recurring"
+  },
+  {
+    "name": "detected_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp when the subscription was cataloged"
+  }
+]

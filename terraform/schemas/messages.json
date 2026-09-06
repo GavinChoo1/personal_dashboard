@@ -1,0 +1,110 @@
+[
+  {
+    "name": "message_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique Gmail message identifier"
+  },
+  {
+    "name": "thread_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Gmail conversation thread identifier"
+  },
+  {
+    "name": "sender_name",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Display name of the email sender"
+  },
+  {
+    "name": "sender_email",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Normalized email address of the sender"
+  },
+  {
+    "name": "recipient",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Primary recipient email address"
+  },
+  {
+    "name": "subject",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Email subject header line"
+  },
+  {
+    "name": "snippet",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Brief text snippet preview from Gmail"
+  },
+  {
+    "name": "body_plain",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Sanitized plain text message body without tracking scripts or raw HTML"
+  },
+  {
+    "name": "internal_date",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Internal Gmail delivery timestamp (used for time-partitioning)"
+  },
+  {
+    "name": "labels",
+    "type": "STRING",
+    "mode": "REPEATED",
+    "description": "Array of Gmail labels applied (e.g. INBOX, UNREAD, CATEGORY_PROMOTIONS)"
+  },
+  {
+    "name": "is_unread",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "Whether message has UNREAD label"
+  },
+  {
+    "name": "is_starred",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "Whether message is STARRED"
+  },
+  {
+    "name": "has_attachments",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "True if message contains non-inline file attachments"
+  },
+  {
+    "name": "attachment_count",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Number of attached files"
+  },
+  {
+    "name": "list_unsubscribe_url",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Extracted one-click unsubscribe URL or mailto from List-Unsubscribe header"
+  },
+  {
+    "name": "category",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Inferred category (Personal, Work, Newsletters, Finance/Bills, Promotions, System)"
+  },
+  {
+    "name": "priority_score",
+    "type": "FLOAT",
+    "mode": "NULLABLE",
+    "description": "AI priority score from 0.0 (low/spam) to 1.0 (urgent/critical)"
+  },
+  {
+    "name": "inserted_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp when record was inserted into BigQuery"
+  }
+]

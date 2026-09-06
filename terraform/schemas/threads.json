@@ -1,0 +1,62 @@
+[
+  {
+    "name": "thread_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique Gmail conversation thread identifier"
+  },
+  {
+    "name": "subject",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Normalized thread subject line"
+  },
+  {
+    "name": "message_count",
+    "type": "INTEGER",
+    "mode": "REQUIRED",
+    "description": "Total number of messages exchanged in this thread"
+  },
+  {
+    "name": "first_message_date",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp of the initial message in the thread"
+  },
+  {
+    "name": "last_message_date",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp of the most recent message in the thread"
+  },
+  {
+    "name": "participants",
+    "type": "STRING",
+    "mode": "REPEATED",
+    "description": "List of participant email addresses in this conversation"
+  },
+  {
+    "name": "labels",
+    "type": "STRING",
+    "mode": "REPEATED",
+    "description": "Consolidated Gmail labels associated with the thread"
+  },
+  {
+    "name": "snippet",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Preview snippet of the thread"
+  },
+  {
+    "name": "has_action_item",
+    "type": "BOOLEAN",
+    "mode": "NULLABLE",
+    "description": "True if an unresolved action item or pending reply exists in this thread"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Timestamp when this thread record was last updated"
+  }
+]
