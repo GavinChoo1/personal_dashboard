@@ -5,13 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "terraform/**"
+      - "backend/terraform/**"
       - ".github/workflows/terraform.yml"
   pull_request:
     branches:
       - main
     paths:
-      - "terraform/**"
+      - "backend/terraform/**"
   workflow_dispatch:
 
 jobs:
@@ -21,7 +21,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./terraform
+        working-directory: ./backend/terraform
 
     env:
       TF_VAR_project_id: ${{ secrets.GCP_PROJECT_ID || 'personal-dashboard-507703' }}
