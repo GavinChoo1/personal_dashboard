@@ -20,6 +20,13 @@ terraform {
       version = "~> 2.4"
     }
   }
+
+  # (Optional for CI/CD) Remote State Storage in Google Cloud Storage:
+  # When running in GitHub Actions, uncomment this block so runners share the same state file:
+  # backend "gcs" {
+  #   bucket = "personal-dashboard-507703-tfstate"
+  #   prefix = "terraform/state"
+  # }
 }
 
 provider "google" {
